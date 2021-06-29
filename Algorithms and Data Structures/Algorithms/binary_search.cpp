@@ -1,11 +1,23 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
-int linear_search(int arr[], int size, int target_value){
-    for (int i = 0; i < size; i++){
-        if (arr[i] == target_value){
-            return i;
+int binary_search(int arr[], int size, int target_value){
+    int first = 0;
+    int last = size - 1;
+
+    while (first <= last){
+        int middle = floor((first + last)/2);
+
+        if (arr[middle] == target_value){
+            return middle;
+        }
+        else if (arr[middle] < target_value){
+            first = middle + 1;
+        }
+        else{
+            last = middle - 1;
         }
     }
     return -1;
@@ -29,7 +41,7 @@ int main(){
     }
     int target_value;
     cin >> target_value;
-    int result = linear_search(arr, size, target_value);
+    int result = binary_search(arr, size, target_value);
     verify(result);
     return 0;
 }
