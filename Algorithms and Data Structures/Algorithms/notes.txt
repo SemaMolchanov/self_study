@@ -1,0 +1,24 @@
+ALGORITHMS
+
+Algorithm - a set of steps or instructions to complete the task.
+
+Well-defined algorithm necessarily has:
+
+1) Clearly defined problem statement, input and output
+2) The steps in the algorithm need to be in a very specific order
+3) The steps also need to be distinct and шndivisible
+4) The algorithm should produce a result
+5) The algorithm should complete in a finite amount of time
+
+
+Big O - theorethical definition of the complexity of an algorithm as a function of the size.
+
+
+Time complexity - the way of showing how fast the runtime of a function increases as the size of the input increases.
+
+Time complexity can be written as a mathematical function.
+
+To find big  O out of a function:
+1) Find the fastest growing term
+2) Take out the coefficient
+
