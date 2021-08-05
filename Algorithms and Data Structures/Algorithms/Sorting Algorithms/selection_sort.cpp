@@ -4,12 +4,15 @@
 using namespace std;
 
 void swap(int &x, int &y){
+    /*this function changes values of 2 variables*/
     int temp = x;
     x = y;
     y = temp;
 }
 
 int location_of_smallest(int arr[], int size, int start){
+    /*this function searches for the smallest element in the array
+    and returns its index*/
     int i = start;
     int j = i;
     while (i < size){
@@ -22,6 +25,7 @@ int location_of_smallest(int arr[], int size, int start){
 }
 
 void selection_sort(int arr[], int size, int i = 0){
+    /*this function swaps values of arr[i] and the smallest element in array*/
     while (i < size - 1){
         int j = location_of_smallest(arr, size, i);
         swap(arr[i], arr[j]);

@@ -1,14 +1,14 @@
-def binary_search(lst, target_value):
+def binary_search(arr, target_value):
     #returns index if target value is found in list, else returns -1
-    first = 0
-    last = len(lst) - 1
+    left = 0
+    right = len(arr) - 1
 
-    while first <= last:
-        middle = (first + last)//2
+    while left <= right:
+        middle = (left + right)//2
         
-        if lst[middle] == target_value:
+        if arr[middle] == target_value:
             return middle
-        elif lst[middle] < target_value:
+        elif arr[middle] < target_value:
             first = middle + 1
         else:
             last = middle - 1

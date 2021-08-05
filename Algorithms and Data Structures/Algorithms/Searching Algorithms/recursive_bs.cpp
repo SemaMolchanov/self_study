@@ -3,21 +3,17 @@
 
 using namespace std;
 
-int binary_search(int arr[], int size, int target_value){
-    int first = 0;
-    int last = size - 1;
-
-    while (first <= last){
-        int middle = floor((first + last)/2);
-
+int binary_search (int arr[], int size, int target_value, int left, int right){
+    if (left <= right){
+        int middle = (left + right)/2;
         if (arr[middle] == target_value){
             return middle;
         }
-        else if (arr[middle] < target_value){
-            first = middle + 1;
+        if (arr[middle] < target_value){
+            return binary_search(arr, size, target_value, middle + 1, right);
         }
-        else{
-            last = middle - 1;
+        else if (arr[middle] > target_value){
+            return binary_search(arr, size, target_value, left, middle - 1);
         }
     }
     return -1;
@@ -41,7 +37,7 @@ int main(){
     }
     int target_value;
     cin >> target_value;
-    int result = binary_search(arr, size, target_value);
+    int result = binary_search(arr, size, target_value, 0, size - 1);
     verify(result);
     return 0;
 }
