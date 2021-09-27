@@ -9,7 +9,7 @@ void swap(int &x, int &y){
     y = temp;
 }
 
-void bubble_sort(int arr[], int size){
+void bubbleSort(int arr[], int size){
     for(int i = 0; i < size; ++i){
         for(int j = i + 1; j < size; ++j){
 
@@ -44,7 +44,7 @@ int main(){
 
     cout << "sorted array:" << endl;
 
-    bubble_sort(arr, size);
+    bubbleSort(arr, size);
 
     for (int i = 0; i < size; ++i){
         cout << arr[i] << " ";
